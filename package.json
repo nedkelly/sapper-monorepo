@@ -1,0 +1,47 @@
+{
+  "name": "sapper-yarn-workspaces-lerna-poc",
+  "version": "1.0.0",
+  "description": "Sapper and Svelte Monorepo POC",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lb": "lerna bootstrap --use-workspaces",
+    "postinstall": "rexreplace \"followSymlinks: false\" \"followSymlinks: true\" ./node_modules/watchpack/lib/DirectoryWatcher.js",
+    "stories": "start-storybook -p 5854 -c .storybook",
+    "test": "NODE_ENV=test jest",
+    "fix:check": "prettier --config ./.prettierrc --ignore-path ./.prettierignore --check **/*.{js,svelte,css,html}",
+    "fix:write": "prettier --config ./.prettierrc --ignore-path ./.prettierignore --write **/*.{js,svelte,css,html}"
+  },
+  "dependencies": {
+    "rexreplace": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "@storybook/svelte": "^5.1.9",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
+    "jest-transform-svelte": "^2.0.2",
+    "lerna": "^3.15.0",
+    "prettier": "^1.18.2",
+    "prettier-plugin-svelte": "^0.6.0",
+    "pretty-quick": "^1.11.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "svelte": "^3.6.3",
+    "svelte-loader": "^2.13.4",
+    "webpack": "^4.35.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

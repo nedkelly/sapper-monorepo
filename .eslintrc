@@ -1,0 +1,50 @@
+{
+  "plugins": ["prettier", "svelte3"],
+  "extends": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "arrowFunctions": true,
+      "defaultParams": true,
+      "modules": true,
+      "classes": true
+    }
+  },
+  "rules": {
+    "prettier": true,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "array-callback-return": [
+      "error",
+      {
+        "allowImplicit": true
+      }
+    ],
+    "no-extra-semi": 2,
+    "eqeqeq": 1,
+    "strict": 2,
+    "no-undef": 2,
+    "no-unused-vars": [
+      1,
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+    "no-loop-func": 2,
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true
+      }
+    ],
+    "semi": 1,
+    "no-mixed-spaces-and-tabs": 2
+  }
+}

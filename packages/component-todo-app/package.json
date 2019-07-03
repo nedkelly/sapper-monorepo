@@ -1,0 +1,11 @@
+{
+  "name": "@nedkelly/component-todo-app",
+  "version": "1.0.0",
+  "description": "This is a TODO App Component",
+  "license": "MIT",
+  "private": true,
+  "svelte": "./TodoApp.svelte",
+  "files": [
+    "./TodoApp.svelte"
+  ]
+}

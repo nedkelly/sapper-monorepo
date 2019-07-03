@@ -1,0 +1,11 @@
+{
+  "name": "@nedkelly/component-button",
+  "version": "1.0.0",
+  "description": "A simple button with Storybook Stories",
+  "license": "MIT",
+  "private": true,
+  "svelte": "./Button.svelte",
+  "files": [
+    "./Button.svelte"
+  ]
+}
