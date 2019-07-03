@@ -1,14 +1,16 @@
+# Sapper Monorepo
 
+This is an example for setting up a Yarn Workspaces and Lerna Monorepo, this example also uses Jest for unit tests and Storybook, all formatting is enforced with Prettier, eslint and Husky pre-commit hooks.
+
+> This is a work in progress and bare bones but it is designed to help others who want to do something similar!
+
+### Dev Notes...
 
 ```bash
-# cd into ./packages
-npx degit "sveltejs/sapper-template#rollup" another-app && cd $_ && rm -f cypress.json && rm -rf ./cypress && rm -f appveyor.yml
-
 # Clean install
+cd packages
+
 npx degit "sveltejs/sapper-template#rollup" app-web-rollup && cd $_
-
-# this will install a new sapper app and remove unwanted files and folders
-
 ```
 
 # Using @nedkelly/ namespaced components
