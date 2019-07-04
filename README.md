@@ -2,6 +2,16 @@
 
 This is an example for setting up a [Yarn Workspaces][yw] and [Lerna][la] Monorepo using [Sapper][sp] and [Svelte][sv], this example also uses [Jest][jt] for unit tests and [Storybook][sb], all formatting is enforced with [Prettier][pr], [eslint][el] and [Husky][hy] pre-commit hooks.
 
+### Why this particular setup?
+
+Because I'm in the process of evaluating [Next.js][ne] and [Nuxt.js][nu] along with [Sapper][sp] and I want to be sure I can use Sapper in the same way so that I have a better idea of any issues that might be encountered.
+
+The only thing missing from this build is [TypeScript][ts] support which I hope will come to Sapper and Svelte soon but for now that's not a problem.
+
+### Why make it public?
+
+Because I'm genuinely interested in Sapper and Svelte, I'm totally hooked on the concept and I want to contribute in some small way to ensure Svelte and Sapper go as far as possible to joining if not surpassing the big 3 frameworks.
+
 ---
 
 _**This is a work in progress and bare bones but it is designed to help others who want to do something similar!**_
@@ -102,12 +112,15 @@ https://github.com/sveltejs/sapper-template/blob/master/README.md#using-external
 
 In this instance I've opted for updating the `rollup.config.js` because Lerna needs to be able to handle dependacies across packages, moving the namespaced dependencies to devDependencies wont work as expected. The downside to this is that the config needs to be updated when you add new apps.
 
-[yw]: https://yarnpkg.com/lang/en/docs/workspaces/
-[la]: https://lerna.js.org/
-[jt]: https://jestjs.io/
-[sb]: https://storybook.js.org/
-[pr]: https://prettier.io/
 [el]: https://eslint.org/
 [hy]: https://github.com/typicode/husky
-[sv]: https://svelte.dev/
+[jt]: https://jestjs.io/
+[la]: https://lerna.js.org/
+[ne]: https://nextjs.org/
+[nu]: https://nuxtjs.org/
+[pr]: https://prettier.io/
+[sb]: https://storybook.js.org/
 [sp]: https://sapper.svelte.dev/
+[sv]: https://svelte.dev/
+[ts]: https://www.typescriptlang.org/
+[yw]: https://yarnpkg.com/lang/en/docs/workspaces/
