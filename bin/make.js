@@ -41,13 +41,17 @@ function runTask(type, n) {
 }
 
 // tasks to run from args
-const runTasks = [...Object.keys(tasks).filter(t => args[t]).map(t => {
-  if (typeof args[t] === 'string') {
-    return () => runTask(t, args[t]);
-  } else {
-    return args[t].map(n => () => runTask(t, n))
-  }
-})].flat();
+const runTasks = [
+  ...Object.keys(tasks)
+    .filter(t => args[t])
+    .map(t => {
+      if (typeof args[t] === 'string') {
+        return () => runTask(t, args[t]);
+      } else {
+        return args[t].map(n => () => runTask(t, n));
+      }
+    }),
+].flat();
 
 // Rename packages to avoid conflicts
 function renamePackage(p) {
@@ -72,13 +76,12 @@ function renamePackage(p) {
 function runEach(tasks) {
   let result = Promise.resolve();
   tasks.forEach(task => {
-    result = result.then(task)
-      .then(res => {
-        console.log(`SUCCESS: ${res.message}`);
-        return renamePackage(res.path)
-          .then(res => console.log(res))
-          .catch(err => console.error(err));
-      });
+    result = result.then(task).then(res => {
+      console.log(`SUCCESS: ${res.message}`);
+      return renamePackage(res.path)
+        .then(res => console.log(res))
+        .catch(err => console.error(err));
+    });
   });
   return result;
 }
