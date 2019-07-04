@@ -5,12 +5,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "fix:check": "prettier --config ./.prettierrc --ignore-path ./.prettierignore --check **/*.{js,svelte,css,html}",
+    "fix:write": "prettier --config ./.prettierrc --ignore-path ./.prettierignore --write **/*.{js,svelte,css,html}",
+    "make": "node ./bin/make.js",
     "lb": "lerna bootstrap --use-workspaces",
     "postinstall": "rexreplace \"followSymlinks: false\" \"followSymlinks: true\" ./node_modules/watchpack/lib/DirectoryWatcher.js",
-    "stories": "start-storybook -p 5854 -c .storybook",
-    "test": "NODE_ENV=test jest",
-    "fix:check": "prettier --config ./.prettierrc --ignore-path ./.prettierignore --check **/*.{js,svelte,css,html}",
-    "fix:write": "prettier --config ./.prettierrc --ignore-path ./.prettierignore --write **/*.{js,svelte,css,html}"
+    "stories": "start-storybook -c .storybook",
+    "test": "NODE_ENV=test jest"
   },
   "dependencies": {
     "rexreplace": "^4.1.1"
@@ -34,13 +35,15 @@
     "react-dom": "^16.8.6",
     "svelte": "^3.6.3",
     "svelte-loader": "^2.13.4",
-    "webpack": "^4.35.2"
+    "webpack": "^4.35.2",
+    "yargs": "^13.2.4"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
+  "defaultNamespace": "@nedkelly",
   "workspaces": [
     "packages/*"
   ]
